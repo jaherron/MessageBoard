@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import QRCode from 'qrcode.react';
+import QRCode from 'react-qr-code'; // changed import
 import '/styles/main.css';
 import ProfileContainer from '/app/profilecontainer';
 import Head from 'next/head';
@@ -48,7 +48,11 @@ export default function Page() {
                     <ProfileContainer id={profileId} />
                     <p style={{ marginTop: "7px" }}>Scan the QR code below to import this profile to another device.</p>
                 </div>
-                {origin && <QRCode value={`${origin}/profile/import/${profileId}`} />}
+                {origin && (
+                    <div style={{ background: 'white', padding: '16px', borderRadius: '8px' }}>
+                        <QRCode value={`${origin}/profile/import/${profileId}`} />
+                    </div>
+                )}
             </div>
         </>
     );
