@@ -12,8 +12,9 @@ export default function ActiveProfileContainer() {
                 fetch(`/api/profiles`)
                     .then((response) => response.json())
                     .then((profiles) => {
-                        if (profiles.find((profile) => profile.id === profileId)) {
-                            fetch(`/api/profiles/${profileId}`)
+                        const validProfile = profiles.find((profile) => profile.id === profileId);
+                        if (validProfile) {
+                            fetch(`/api/profiles/${validProfile.id}`)
                                 .then((response) => response.json())
                                 .then((data) => {
                                     setActiveProfile(data);
