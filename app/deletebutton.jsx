@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { isValidProfileId } from '../utils/validation';
 
 export default function DeleteButton({id, fetchFunction}) {
     const [authorProfileId, setAuthorProfileId] = useState('');
@@ -20,10 +19,10 @@ export default function DeleteButton({id, fetchFunction}) {
                 alert('The active profile is not valid. Please reselect your profile in the Profile Manager.');
                 return;
             }
-
+            
             if (authorProfileId !== defaultProfileId) {
-                if (!isValidProfileId(defaultProfileId, validProfiles)) {
-                    alert('Invalid profile ID detected. Please ensure your active profile is valid.');
+                if (!validProfiles.some(profile => profile.id === defaultProfileId)) {
+                    alert('The active profile is not valid. Please reselect your profile in the Profile Manager.');
                     return;
                 }
 
