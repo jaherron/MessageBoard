@@ -9,9 +9,34 @@ export default function ActiveProfileContainer() {
         if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
             const profileId = localStorage.getItem('defaultProfileId');
             if (profileId) {
-                fetch(`/api/profiles/${profileId}`).then((response) => response.json()).then((data) => {
-                    setActiveProfile(data);
-                });
+                fetch(`/api/profiles`)
+                    .then((response) => response.json())
+                    .then((profiles) => {
+                        if (profiles.find((profile) => profile.id === profileId)) {
+                            fetch(`/api/profiles/${profileId}`)
+                                .then((response) => response.json())
+                                .then((data) => {
+                                    setActiveProfile(data);
+                                });
+                        } else {
+                            console.error('Invalid profile ID:', profileId);
+                            const anonProfile = {
+                                displayname: 'Invalid profile',
+                                username: 'unknown',
+                                profilePicture: 'https://img.icons8.com/fluency/48/person-male.png',
+                            };
+                            setActiveProfile(anonProfile);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error fetching profiles:', error);
+                        const anonProfile = {
+                            displayname: 'Error loading profile',
+                            username: 'unknown',
+                            profilePicture: 'https://img.icons8.com/fluency/48/person-male.png',
+                        };
+                        setActiveProfile(anonProfile);
+                    });
             } else {
                 const anonProfile = {
                     displayname: 'No profile set',
