@@ -14,7 +14,7 @@ export default function DeleteButton({id, fetchFunction}) {
     async function deletePost() {
         if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
             const defaultProfileId = localStorage.getItem('defaultProfileId');
-            const validProfiles = await fetch('/api/profiles/valid').then((response) => response.json());
+            const validProfiles = await fetch('/api/profiles').then((response) => response.json());
             if (!validProfiles.includes(defaultProfileId)) {
                 alert('The active profile is not valid. Please reselect your profile in the Profile Manager.');
                 return;
