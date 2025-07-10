@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import { isValidProfileId } from '../utils/validation';
 
 export default function DeleteButton({id, fetchFunction}) {
     const [authorProfileId, setAuthorProfileId] = useState('');
@@ -21,6 +22,11 @@ export default function DeleteButton({id, fetchFunction}) {
             }
 
             if (authorProfileId !== defaultProfileId) {
+                if (!isValidProfileId(defaultProfileId, validProfiles)) {
+                    alert('Invalid profile ID detected. Please ensure your active profile is valid.');
+                    return;
+                }
+
                 const profile = await fetch(`/api/profiles/${defaultProfileId}`).then((response) => response.json());
                 if (!profile.moderator){
                     alert(`Cannot delete this post; you must be the post's author or a moderator to delete a post. If you are able to delete this post, please select the correct profile in the Profile Manager.`);
