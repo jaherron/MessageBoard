@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import '/styles/main.css';
-import EditPostForm from '/app/editpostform';
-import ActiveProfileContainer from '/app/activeprofilecontainer';
+import '../../styles/main.css';
+import EditPostForm from '../../app/editpostform';
+import ActiveProfileContainer from '../../app/activeprofilecontainer';
 import Head from 'next/head';
 
 export default function Page() {

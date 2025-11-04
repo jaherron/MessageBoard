@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import '/styles/main.css';
+import '../../styles/main.css';
 import EditProfileForm from '../../app/editprofileform';
 import Head from 'next/head';
 

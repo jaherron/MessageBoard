@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import QRCode from 'react-qr-code'; // changed import
-import '/styles/main.css';
-import ProfileContainer from '/app/profilecontainer';
+import '../../../../styles/main.css';
+import ProfileContainer from '../../../../app/profilecontainer';
 import Head from 'next/head';
 
 export default function Page() {

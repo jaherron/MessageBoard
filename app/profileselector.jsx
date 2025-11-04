@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import ProfileContainer from '/app/profilecontainer.jsx';
+import ProfileContainer from './profilecontainer.jsx';
 
 export default function ProfileSelector() {
     const [profiles, setProfiles] = useState([]);

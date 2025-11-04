@@ -1,5 +1,5 @@
 import React from 'react';
-import '/styles/main.css';
+import '../../styles/main.css';
 import ProfileSelector from '../../app/profileselector';
 import Head from 'next/head';
 

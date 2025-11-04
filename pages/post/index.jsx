@@ -1,5 +1,5 @@
 import React from 'react';
-import '/styles/main.css';
+import '../../styles/main.css';
 import NewPostForm from '../../app/newpostform';
 import ActiveProfileContainer from '../../app/activeprofilecontainer';
 import Head from 'next/head';
