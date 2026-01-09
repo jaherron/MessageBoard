@@ -14,8 +14,8 @@
     "next": "16.0.10",
     "prisma": "6.19.0",
     "react-qr-code": "latest",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-router-dom": "^7.12.0"
   }
 }
