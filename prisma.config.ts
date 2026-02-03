@@ -7,6 +7,6 @@ export default defineConfig({
   },
   datasource: {
     // For Prisma 7, use your DIRECT connection here for migrations
-    url: env("POSTGRES_URL_NON_POOLING"),
+    url: env("DATABASE_URL_UNPOOLED"),
   },
 });

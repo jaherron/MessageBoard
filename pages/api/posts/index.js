@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient({
-  datasourceUrl: process.env.POSTGRES_URL,
+  datasourceUrl: process.env.DATABASE_URL,
 })
 
 export default async function handler(req, res) {

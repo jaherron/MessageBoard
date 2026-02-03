@@ -5,7 +5,7 @@ import PostContainer from './postcontainer';
 import ActiveProfileContainer from './activeprofilecontainer';
 
 export const prisma = new PrismaClient({
-  datasourceUrl: process.env.POSTGRES_URL,
+  datasourceUrl: process.env.DATABASE_URL,
 })
 
 export default async function HomePage() {
