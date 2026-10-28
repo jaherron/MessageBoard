@@ -10,7 +10,7 @@
     "vercel-build": "next build"
   },
   "dependencies": {
-    "@prisma/client": "6.19.3",
+    "@prisma/client": "7.10.1",
     "next": "16.4.2",
     "prisma": "7.10.1",
     "react-qr-code": "latest",
