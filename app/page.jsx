@@ -1,10 +1,7 @@
 import React from 'react';
 import '../styles/main.css';
-import { PrismaClient } from '@prisma/client';
 import PostContainer from './postcontainer';
 import ActiveProfileContainer from './activeprofilecontainer';
-
-export const prisma = new PrismaClient();
 
 export default async function HomePage() {
   return (
